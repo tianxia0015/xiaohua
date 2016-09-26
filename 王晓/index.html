@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>法国浪漫式红酒</title>
+		<link href="img/yymm.ico" rel="shortcut icon" />
+		<link rel="stylesheet" type="text/css" href="css/com.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"  />		
+			
+		<!-- Demo styles -->
+	    <style>
+		    html, body {
+		        position: relative;
+		        height: 100%;
+		    }
+		    body {
+		        background: #eee;
+		        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+		        font-size: 14px;
+		        color:#000;
+		        margin: 0;
+		        padding: 0;
+		    }
+		    .swiper-container {
+		        width: 100%;
+		        height: 500px;
+		    }
+		    .swiper-slide {
+		        text-align: center;
+		        font-size: 18px;
+		        background: #fff;
+		
+		        /* Center slide text vertically */
+		        display: -webkit-box;
+		        display: -ms-flexbox;
+		        display: -webkit-flex;
+		        display: flex;
+		        -webkit-box-pack: center;
+		        -ms-flex-pack: center;
+		        -webkit-justify-content: center;
+		        justify-content: center;
+		        -webkit-box-align: center;
+		        -ms-flex-align: center;
+		        -webkit-align-items: center;
+		        align-items: center;
+		    }
+		    .cwbc_span .active{
+		    	background: #d3161b;
+		    }
+		    .banner_span .bactive{
+		    	background: #d3161b;
+		    }
+		    .cstlt dl:hover img{
+		    	-webkit-transform:scale(1.1,1.1);
+   				-moz-transform:scale(1,1);
+    			-transform:scale(1,1);
+		    }
+		    .cstlb dl:hover img{
+		    	-webkit-transform:scale(1.1,1.1);
+   				-moz-transform:scale(1,1);
+    			-transform:scale(1,1);
+		    }
+	    </style>
+		<script src="js/jquery-3.0.0.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script>
+			/*header_top*/
+			/*$(function(){
+				var swiper = new Swiper('.swiper-container', {
+		    		autoplay: 1000,//可选选项，自动滑动
+			        pagination: '.swiper-pagination',
+			        paginationClickable: true
+			    });
+			})*/
+			/*banner切换*/
+			$(function(){
+				/*加一个定时器，让它自动轮播*/
+				var count = 0;
+				var isTure = false;
+				var timer = setInterval(function(){
+					
+					/*if(count==10){
+						count=0;
+					}*/
+					if(!isTure){
+						count++;
+						if(count==10){
+							count = 8;
+							isTure = true;
+						}
+					}else{
+						count--;
+						if(count==0){
+							isTure = false;
+						}
+					}
+					$(".banner_span span").eq(count).removeClass().addClass("bactive").siblings()
+					.removeClass("bactive").parent().siblings().animate({left:-1920*count},500);;
+					//$("banner_span span").eq(count).parent().siblings("banner_index").animate({left:-1920},500);
+				},1000)
+				/*鼠标移入时，让轮播图左右切换*/
+				$(".banner_span span").mouseenter(function(){
+					clearInterval(timer);
+					var index = $(this).index();
+					//$(this).addClass("sele").siblings().removeClass("sele");
+					$(this).removeClass().addClass("bactive").siblings().removeClass("bactive")
+					$(this).parent().siblings(".banner_index").stop().animate({left:-1920*index},500);
+				})
+				/*鼠标移出事件*/
+				$(".banner_span span").mouseleave(function(){
+					/*加一个定时器，让它自动轮播*/
+					var count = 0;
+					var isTure = false;
+					var timer = setInterval(function(){
+						
+						/*if(count==10){
+							count=0;
+						}*/
+						if(!isTure){
+							count++;
+							if(count==10){
+								count = 8;
+								isTure = true;
+							}
+						}else{
+							count--;
+							if(count==0){
+								isTure = false;
+							}
+						}
+						$(this).eq(count).removeClass().addClass("bactive").siblings()
+						.removeClass("bactive").parent().siblings().animate({left:-1920*count},500);;
+						//$("banner_span span").eq(count).parent().siblings("banner_index").animate({left:-1920},500);
+					},1000)
+				})
+			})
+			/*banner中的鼠标移入移除事件*/
+			$(function(){
+				/*swc_ul1*/
+				$(".selwine_center li").mouseenter(function(){
+					//console.log(this);
+					$(this).find(".swc_ul1").fadeIn(1000);
+					
+				})
+				$(".selwine_center li").mouseleave(function(){
+					//console.log(this);
+					$(this).find(".swc_ul1").fadeOut();
+					
+				})
+				/*swc_ul2*/
+				$(".selwine_center li").mouseenter(function(){
+					//console.log(this);
+					$(this).find(".swc_ul2").show();
+					
+				})
+				$(".selwine_center li").mouseleave(function(){
+					//console.log(this);
+					$(this).find(".swc_ul2").hide();
+					
+				})
+				/*swc_ul3*/
+				$(".selwine_center li").mouseenter(function(){
+					//console.log(this);
+					$(this).find(".swc_ul3").show();
+					
+				})
+				$(".selwine_center li").mouseleave(function(){
+					//console.log(this);
+					$(this).find(".swc_ul3").hide();
+					
+				})
+				/*swc_ul4*/
+				$(".selwine_center li").mouseenter(function(){
+					//console.log(this);
+					$(this).find(".swc_ul4").show();
+					
+				})
+				$(".selwine_center li").mouseleave(function(){
+					//console.log(this);
+					$(this).find(".swc_ul4").hide();
+					
+				})
+				/*swc_ul5*/
+				$(".selwine_center li").mouseenter(function(){
+					//console.log(this);
+					$(this).find(".swc_ul5").show();
+					
+				})
+				$(".selwine_center li").mouseleave(function(){
+					//console.log(this);
+					$(this).find(".swc_ul5").hide();
+					
+				})
+				/*swc_ul6*/
+				$(".selwine_center li").mouseenter(function(){
+					//console.log(this);
+					$(this).find(".swc_ul6").show();
+					
+				})
+				$(".selwine_center li").mouseleave(function(){
+					//console.log(this);
+					$(this).find(".swc_ul6").hide();
+					
+				})
+			})
+			/*人气抢购*/
+			$(function(){
+				$(".ccright_ul li").mouseenter(function(){
+					$(this).css("background","#d95b44").siblings().css("background","pink");
+					
+				})
+			})
+			$(function(){
+				$(".cc_right dl").mouseenter(function(){
+					$(this).css("opacity","1").siblings().css("opacity","0.6");
+				})
+			})
+			/*猜你喜欢*/
+			$(function(){
+				$(".clike_right dl").mouseenter(function(){
+					//console.log(this);
+					$(this).css("opacity","1").siblings().css("opacity","0.6");
+				})
+				
+			})
+			/*$(function(){
+				$(".clike_right dl").click(function(){
+					//console.log(this);
+					$(this).css("window.location.href","shop.html");
+				})
+			})*/
+			/*品牌汇*/
+			$(function(){
+				$(".cs_right img").mouseenter(function(){
+					$(this).css("opacity","0.6").siblings().css("opacity","1");
+				})
+			})
+			/*特色专题*/
+			$(function(){
+				$(".cf_ul li").on("mouseenter",function(){
+					//console.log(this);
+					$(this).stop().animate({"width":"450px"},500)
+					.siblings().stop().animate({"width":"150px"},500);
+					
+				})
+			})
+			
+			$(function(){
+				$(".cbb_ul li img").mouseenter(function(){
+					$(this).stop().animate({"left":"-100px"},500)
+					.siblings().stop();
+				})
+				$(".cbb_ul li img").mouseleave(function(){
+					$(this).stop().animate({"left":"0px"},500)
+					.siblings().stop();
+				})
+			})
+			/*进口葡萄酒*/
+			$(function(){
+				//加一个定时器让它自动轮播
+				var count = 0;
+				var isTure = false;
+				var timer = setInterval(function(){
+					if(!isTure){
+						count++;
+						//console.log(count);
+						if(count==3){
+							count=1;
+							isTure = true;
+						}
+					}else{
+						count--;
+						if(count==0){
+							isTure = false;
+						}
+					}
+					$(".cwbc_span span").eq(count).addClass("active").siblings().removeClass()
+						.parent().siblings().animate({left:-760*count},500);
+						
+					
+					
+				},2000)
+				/*鼠标移入事件*/
+				$(".cwbc_span span").mouseenter(function(){
+					//console.log("aaa")
+					//console.log(this);
+					clearInterval(timer);
+					var index = $(this).index();
+					console.log(index);
+					$(this).removeClass().addClass("active").siblings().removeClass("active")
+					.parent().siblings("ul").stop().animate({"left":-760*index},500);
+				})
+				/*鼠标移除事件*/
+				$(".cwbc_span span").mouseleave(function(){
+					var count = 0;
+					var timer = setInterval(function(){
+					count++;
+					if(count==3){
+						count=0;
+					}
+					$(this).eq(count).addClass("active").siblings().removeClass()
+						.parent().siblings().stop().animate({left:-760*count},500);
+					},2000)	
+				})
+			})
+			/*性价之比*/
+			$(function(){
+				$(".cstlt dl").mouseenter(function(){
+					$(this).css("border","1px solid red").siblings().css("border","1px solid #ccc");
+				})
+				
+				$(".cstlb dl").mouseenter(function(){
+					$(this).css("border","1px solid red").siblings().css("border","1px solid #ccc");
+				})
+				
+				$(".cpbl_bottom dl").mouseenter(function(){
+					$(this).css("border","1px solid red").siblings().css("border","1px solid #ccc");
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<!--header-->
+			<div id="header">
+				<div class="header com">
+					<div class="ht_reg">
+						<p>99999位会员的选择</p>
+						<a href="login.html">登录</a><span>|</span><a href="register.html">注册</a>
+					</div>
+					<ul class="ht_li">
+						<li><a href="#">会员俱乐部</a></li>
+						<li><a href="#">签到</a></li>
+						<li>
+							<a href="#">
+								我的账户
+							</a>
+						</li>
+						<li><a href="#">手机版</a></li>
+						<li><a href="#">红酒交易中心</a></li>
+						<li><a href="#">也买服务</a></li>
+						<li><a href="#">设置勿扰</a></li>
+					</ul>
+				</div>
+			</div>
+		<!--logo-->
+			<div id="logo">
+				<div class="logo com">
+					<div class="logo_left">
+						<h1><img src="img/341index-82_logo.jpg" alt="这是logo" title="logo"/></h1>
+					</div>
+					<form class="search">
+						<input class="txt" type="text" placeholder="输入你要查找的商品名称" />
+						<input class="btn" type="button" value="搜索"  />
+						<ul class="search_ul">
+							<li><a href="#">中秋月饼/大闸蟹/礼盒</a></li>
+							<li><a href="#">婚庆整箱</a></li>
+							<li><a href="#">名装酒</a></li>
+							<li><a href="#">特色陈年老酒</a></li>
+							<li><a href="#">也买酒学院</a></li>
+						</ul>
+					</form>
+					<div class="logo_right">
+						<a href="#">购物车</a>
+					</div>
+				</div>
+			</div>
+		<!--nav-->
+			<div id="nav">
+				<div class="nav com">
+					<h4>选酒中心</h4>
+					<ul class="nav_ul clearfix">
+						<li>首页</li>
+						<li>超值抢购</li>
+						<li>精品闪购</li>
+						<li>名装特卖</li>
+						<li>香港免税</li>
+						<li class="end">国酒馆</li>
+					</ul>
+				</div>
+			</div>
+		<!--banner-->
+			<div id="banner">
+				<!-- Swiper -->
+			    <!--<div class="swiper-container">-->
+			        <!--<div class="swiper-wrapper">
+			            <div class="swiper-slide"><img src="img/banner11.jpg"/></div>
+			            <div class="swiper-slide"><img src="img/banner12.jpg"/></div>
+			            <div class="swiper-slide"><img src="img/banner13.jpg"/></div>
+			            <div class="swiper-slide"><img src="img/banner14.jpg"/></div>
+			            <div class="swiper-slide"><img src="img/banner15.jpg"/></div>
+			            <div class="swiper-slide"><img src="img/banner16.jpg"/></div>
+			            <div class="swiper-slide"><img src="img/banner17.jpg"/></div>
+			            <div class="swiper-slide"><img src="img/banner18.jpg"/></div>
+			            <div class="swiper-slide"><img src="img/banner19.jpg"/></div>
+			            <div class="swiper-slide"><img src="img/banner20.jpg"/></div>
+			        </div>-->
+			        <!-- Add Pagination -->
+			        <!--<div class="swiper-pagination"></div>-->
+			    <!--</div>-->
+				<div class="banner_index">
+					<ul class="banner_ul">
+						<li><img src="img/banner2.jpg"/></li>
+						<li><img src="img/banner1.jpg"/></li>
+						<li><img src="img/banner3.jpg"/></li>
+						<li><img src="img/banner4.jpg"/></li>
+						<li><img src="img/banner5.jpg"/></li>
+						<li><img src="img/banner6.jpg"/></li>
+						<li><img src="img/banner7.jpg"/></li>
+						<li><img src="img/banner8.jpg"/></li>
+						<li><img src="img/banner9.jpg"/></li>
+						<li><img src="img/banner10.jpg"/></li>
+					</ul>
+				</div>
+				<div class="banner_span">
+						<span class="bactive">1</span>
+						<span>2</span>
+						<span>3</span>
+						<span>4</span>
+						<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+				</div>
+				<div class="banner com">
+					<ul class="selwine_center">
+						<li>
+							<a href="#">
+								<h4>葡萄酒</h4>
+							</a>
+							<div class="kind_wine">
+								<a href="#">法国</a>
+								<a href="#">西班牙</a>
+								<a href="#">意大利</a>
+								<a href="#">智利</a>
+								<a href="#">干红</a>
+								<a href="#">桃红</a>
+								<a href="#">甜白</a>
+								<a href="#">起泡</a>
+								<a href="#">香槟</a>
+								<a href="#">加强葡萄酒</a>
+								<a href="#">列级名庄</a>
+							</div>
+							<ul class="swc_ul1">
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li><li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<h4>一级选酒</h4>
+							</a>
+							<div class="kind_wine">
+								<a href="#">礼盒</a>
+								<a href="#">餐酒精选</a>
+								<a href="#">实惠套装</a>
+								<a href="#">权威高分酒</a>
+								<a href="#">聚会婚庆整箱</a>
+								<a href="#">精品闪购</a>
+								<a href="#">团购</a>
+								<a href="#">陈酿老酒</a>
+							</div>
+							<ul class="swc_ul2">
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>	
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<h4>洋酒烈酒</h4>
+							</a>
+							<div class="kind_wine">
+								<a href="#">轩尼诗</a>
+								<a href="#">威士忌</a>
+								<a href="#">鸡尾酒</a>
+								<a href="#">百利甜</a>
+								<a href="#">干邑</a>
+								<a href="#">白兰地</a>
+								<a href="#">朗姆酒</a>
+								<a href="#">伏加特</a>
+							</div>
+							<ul class="swc_ul3">
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li><li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<h4>中国白酒</h4>
+							</a>
+							<div class="kind_wine">
+								<a href="#">茅台</a>
+								<a href="#">五粮液</a>
+								<a href="#">洋河</a>
+								<a href="#">红花郎</a>
+							</div>
+							<ul class="swc_ul4">
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li><li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>
+							</ul>	
+						</li>
+						<li>
+							<a href="#">
+								<h4>酒具周边</h4>
+							</a>
+							<div class="kind_wine">
+								<a href="#">酒杯</a>
+								<a href="#">酒柜</a>
+								<a href="#">酒刀</a>
+								<a href="#">醒酒器</a>
+								<a href="#">礼盒</a>
+								<a href="#">其他酒具</a>
+							</div>
+							<ul class="swc_ul5">
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>	
+							</ul>
+							
+						</li>
+							
+						<li>
+							<a href="#">
+								<h4>啤酒 黄酒 日韩酒</h4>
+							</a>
+							<div class="kind_wine">
+								<a href="#">进口啤酒</a>
+								<a href="#">精酿黄酒</a>
+								<a href="#">矩惠抢购</a>
+								<a href="#">绍兴黄酒</a>
+								<a href="#">清酒</a>
+								<a href="#">梅酒</a>
+							</div>
+							<ul class="swc_ul6">
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li><li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>
+								<li>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+									<a href="#">葡萄酒</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!--<div class="banner_span">
+						<span class="span1">1</span>
+						<span>2</span>
+						<span>3</span>
+						<span>4</span>
+						<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+					</div>-->
+					<div class="banner_right">
+						<h2><img src="img/banner_rightLogo.png"  /> </h2>
+						<a href="login.html">登录</a>
+						<a href="register.html">注册</a>
+					<!--
+						<input class="land" type="submit" value="登录" /><br />
+						<input class="register" type="submit" value="注册" />
+					-->
+						<a href="#">我的订单</a>
+						<a href="#">我的优惠卷</a>
+						<a href="#">我的积分</a>
+						<a href="#">我的存酒</a>
+						<a href="#">会员升级</a>
+					</div>
+				</div>
+			</div>
+		<!--content-->
+			<div id="content">
+				<div class="content com">
+					<div class="content_competitive clearfix">
+						<div class="cc_left">
+							<img src="img/competitive_product.jpg"  />
+							<ul class="ccleft_ul1">
+								<li><a href="#">促销活动</a></li>
+								<li><a href="#">最新广告</a></li>
+								<li><a href="#">媒体聚集</a></li>
+							</ul>
+							<ul class="ccleft_ul2">
+								<li>James Suckling TOP 5 Picks 七大产地 最佳TOP5期酒推荐</li>
+								<li>2014年是属于波尔多左岸的一年 2015-4-02</li>
+								<li>右岸不容小觑，600款2014年葡萄酒分数首发 2015-3-27</li>
+								<li>250多款2014年份波尔多酒分数首发 2015-3-24</li>
+							</ul>
+						</div>
+						<div class="cc_right">
+							<ul class="ccright_ul">
+								<li>人气抢购</li>
+								<li>整箱特惠</li>
+								<li>名庄特卖</li>
+								<li>精品闪购</li>
+								<li>白酒/陈年老酒</li>
+							</ul>
+							<dl>
+								<span>还剩2天3时56分</span>
+								<dt><img src="img/ccimg1_110x180.JPG"/></dt>
+								<dd>
+									奔富酒园RWT设拉子干红葡萄酒 2013
+									<p>抢购价：<b>￥89.0</b></p>
+								</dd>
+							</dl>
+							<dl>
+								<span>还剩2天3时56分</span>
+								<dt><img src="img/ccimg2_110x180.png"/></dt>
+								<dd>
+									佳美妃霞多丽-大芒森干白葡萄酒
+									<p>抢购价：<b>￥89.0</b></p>
+								</dd>
+							</dl>
+							<dl>
+								<span>还剩2天3时56分</span>
+								<dt><img src="img/ccimg3_110x180.JPG"/></dt>
+								<dd>
+									佳美妃霞多丽-大芒森干白葡萄酒
+									<p>抢购价：<b>￥89.0</b></p>
+								</dd>
+							</dl>
+							<dl>
+								<span>还剩2天3时56分</span>
+								<dt><img src="img/ccimg4_110x180.JPG"/></dt>
+								<dd>
+									佳美妃霞多丽-大芒森干白葡萄酒
+									<p>抢购价：<b>￥89.0</b></p>
+								</dd>
+							</dl>
+							<dl>
+								<span>还剩2天3时56分</span>
+								<dt><img src="img/ccimg5_110x180.JPG"/></dt>
+								<dd>
+									佳美妃霞多丽-大芒森干白葡萄酒
+									<p>抢购价：<b>￥89.0</b></p>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<!--猜你喜欢-->
+					<div class="clike clearfix">
+						<div class="clike_top">
+							<h2>猜你喜欢</h2>
+							<p>根据你的喜欢精心推选</p>
+						</div>
+						<div class="clike_left">
+							<h2>专属推荐</h2>
+							<ul class="cll_ul">
+								<li><img src="img/like_R.jpg" /><a href="#">实惠控</a></li>
+								<li><img src="img/like_R.jpg" /><a href="#">实惠控</a></li>
+								<li><img src="img/like_R.jpg" /><a href="#">实惠控</a></li>
+								<li><img src="img/like_R.jpg" /><a href="#">实惠控</a></li>
+								<li><img src="img/like_R.jpg" /><a href="#">实惠控</a></li>
+								<li><img src="img/like_R.jpg" /><a href="#">实惠控</a></li>
+								<li><img src="img/like_R.jpg" /><a href="#">实惠控</a></li>
+								<li><img src="img/like_R.jpg" /><a href="#">实惠控</a></li>
+							</ul>
+						</div>
+						<div class="clike_right">
+							<dl>
+								<dt><img src="img/like1_110x180.jpg" /></dt>
+								<dd>
+									<a href="#">意大利弗莱斯凯罗葡萄酒(红)</a>
+									<p>Freschello rosso</p>
+									<p>产地：意大利(Italy)</p>
+									<p>品种：100%梅洛(Merlot)</p>
+									<p>好评度：97%</p>
+									<b>¥52.0</b>
+								</dd>
+							</dl>
+							<dl>
+								<dt><a href="shop.html"><img src="img/like2_110x180.png" /></a></dt>
+								<dd>
+									<a href="#">意大利弗莱斯凯罗葡萄酒(红)</a>
+									<p>Freschello rosso</p>
+									<p>产地：意大利(Italy)</p>
+									<p>品种：100%梅洛(Merlot)</p>
+									<p>好评度：97%</p>
+									<b>¥52.0</b>
+								</dd>
+							</dl>
+							<dl>
+								<dt><img src="img/like3_110x180.jpg" /></dt>
+								<dd>
+									<a href="#">意大利弗莱斯凯罗葡萄酒(红)</a>
+									<p>Freschello rosso</p>
+									<p>产地：意大利(Italy)</p>
+									<p>品种：100%梅洛(Merlot)</p>
+									<p>好评度：97%</p>
+									<b>¥52.0</b>
+								</dd>
+							</dl>
+							<dl>
+								<dt><img src="img/like4_110x180.jpg" /></dt>
+								<dd>
+									<a href="#">意大利弗莱斯凯罗葡萄酒(红)</a>
+									<p>Freschello rosso</p>
+									<p>产地：意大利(Italy)</p>
+									<p>品种：100%梅洛(Merlot)</p>
+									<p>好评度：97%</p>
+									<b>¥52.0</b>
+								</dd>
+							</dl>
+							<dl>
+								<dt><img src="img/like5_110x180.jpg" /></dt>
+								<dd>
+									<a href="#">意大利弗莱斯凯罗葡萄酒(红)</a>
+									<p>Freschello rosso</p>
+									<p>产地：意大利(Italy)</p>
+									<p>品种：100%梅洛(Merlot)</p>
+									<p>好评度：97%</p>
+									<b>¥52.0</b>
+								</dd>
+							</dl>
+							<dl>
+								<dt><img src="img/like6_110x180.jpg" /></dt>
+								<dd>
+									<a href="#">意大利弗莱斯凯罗葡萄酒(红)</a>
+									<p>Freschello rosso</p>
+									<p>产地：意大利(Italy)</p>
+									<p>品种：100%梅洛(Merlot)</p>
+									<p>好评度：97%</p>
+									<b>¥52.0</b>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<!--特色专题-->
+					<div class="cspecial">
+						<div class="cspecial_top">
+							<h2>特色专题</h2>
+							<p>根据你的喜欢精心推选</p>
+						</div>
+						<div class="cs_left">
+							<img src="img/special_left.jpg" />
+						</div>
+						<div class="cs_right">
+							<img src="img/special_right1.jpg"  />
+							<img src="img/special_right2.jpg"  />
+							<img src="img/special_right3.jpg"  />
+							<img src="img/special_right4.jpg"  />
+						</div>
+					</div>
+					<!--品牌汇-->
+					<div class="cbrand clearfix">
+						<div class="cbrand_top">
+							<h2>品牌汇</h2>
+							<!--<p>根据你的喜欢精心推选</p>-->
+						</div>
+						<div class="cbrand_footer">
+							<ul class="cf_ul">
+								<li class="cfu_li"><img src="img/brand1.jpg"/></li>
+								<li><img src="img/brand2.jpg"/></li>
+								<li><img src="img/brand3.jpg"/></li>
+								<li><img src="img/brand4.jpg"/></li>
+								<li><img src="img/brand5.jpg"/></li>
+								<li><img src="img/brand6.jpg"/></li>
+							</ul>
+						</div>
+						<div class="cbrand_bottom">
+							<ul class="cbb_ul">
+								<li><div class="cbbu_img"><img src="img/brand11.jpg"/></div></li>
+								<li><div class="cbbu_img"><img src="img/brand12.jpg"/></div></li>
+								<li><div class="cbbu_img"><img src="img/brand13.jpg"/></div></li>
+								<li><div class="cbbu_img"><img src="img/brand14.jpg"/></div></li>
+								<li><div class="cbbu_img"><img src="img/brand15.jpg"/></div></li>
+							</ul>
+						</div>
+					</div>
+					
+						
+					<!--进口葡萄酒-->
+					<div class="cwine clearfix">
+						<div class="cwine_top">
+							<h2>进口葡萄酒</h2>
+							<ul class="cwt_ul">
+								<li><a href="#">红葡萄</a><span>|</span></li>
+								<li><a href="#">白葡萄</a><span>|</span></li>
+								<li><a href="#">绿葡萄</a><span>|</span></li>
+								<li><a href="#">蓝葡萄</a><span>|</span></li>
+								<li><a href="#">黄葡萄</a><span>|</span></li>
+								<li><a href="#">棕葡萄</a></li>
+							</ul>
+						</div>
+						<div class="cwine_bottom">
+							<ul class="cwbl_ul">
+								<li><img src="img/cwb_left1.jpg" /></li>
+								<li><img src="img/cwb_left2.jpg" /></li>
+								<li><img src="img/cwb_left3.jpg" /></li>
+								<li><img src="img/cwb_left4.jpg" /></li>
+								<li><img src="img/cwb_left5.jpg" /></li>
+								<li><img src="img/cwb_left6.jpg" /></li>
+								<li><img src="img/cwb_left7.jpg" /></li>
+								<li><img src="img/cwb_left8.jpg" /></li>
+								<li><img src="img/cwb_left9.jpg" /></li>
+								<li><img src="img/cwb_left10.jpg" /></li>
+							</ul>
+							<div class="cwb_center">
+								<ul class="cwbc_ul">
+									<li><img src="img/cwine1.jpg"/></li>
+									<li><img src="img/cwine2.jpg"/></li>
+									<li><img src="img/cwine3.jpg"/></li>
+								</ul>
+								<div class="cwbc_span">
+									<span class="active">1</span>
+									<span>2</span>
+									<span>3</span>
+								</div>
+							</div>
+							
+							<ul class="cwbr_ul">
+								<li><img src="img/cwine_right1.jpg" /></li>
+								<li><img src="img/cwine_right2.jpg" /></li>
+							</ul>
+						</div>
+					</div>
+					
+					<!--性价之比-->
+					<div class="cspent clearfix">
+						<div class="cspent_left">
+							<div class="cspentl_top">
+								<h2>性价之比</h2>
+								<div class="cstlt">
+									<dl>
+										<dt><img src="img/spent1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/spent1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/spent1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/spent1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/spent1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="cspentl_bottom">
+								<h2>性价之比</h2>
+								<div class="cstlb">
+									<dl>
+										<dt><img src="img/spent1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/spent1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/spent1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/spent1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/spent1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+						<div class="cspent_right">
+							<ul class="csr_ul">
+								<li><span>1</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>2</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>3</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>4</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>5</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>6</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>7</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>8</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>9</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>10</span><a href="#">拉伸红酒杯</a></li>
+							</ul>
+						</div>
+					</div>
+					<!--洋酒 烈酒foreign-->
+					<div class="cwine clearfix">
+						<div class="cwine_top">
+							<h2>洋酒、烈酒</h2>
+							<ul class="cwt_ul">
+								<li><a href="#">伏特加</a><span>|</span></li>
+								<li><a href="#">朗姆酒</a><span>|</span></li>
+								<li><a href="#">威士忌</a><span>|</span></li>
+								<li><a href="#">白兰地</a><span>|</span></li>
+								<li><a href="#">龙舌兰</a><span>|</span></li>
+								<li><a href="#">干邑</a></li>
+							</ul>
+						</div>
+						<div class="cwine_bottom">
+							<ul class="cwbl_ul">
+								<li><img src="img/for_left1.jpg" /></li>
+								<li><img src="img/for_left2.jpg" /></li>
+								<li><img src="img/for_left3.jpg" /></li>
+								<li><img src="img/for_left4.jpg" /></li>
+								<li><img src="img/for_left5.jpg" /></li>
+								<li><img src="img/for_left6.jpg" /></li>
+								<li><img src="img/for_left7.jpg" /></li>
+								<li><img src="img/for_left8.jpg" /></li>
+								<li><img src="img/for_left9.jpg" /></li>
+								<li><img src="img/for_left10.jpg" /></li>
+							</ul>
+							<div class="cwb_center">
+								<ul class="cwbc_ul">
+									<li><img src="img/for_banner1.jpg"/></li>
+									<li><img src="img/for_banner2.jpg"/></li>
+									<li><img src="img/for_banner3.jpg"/></li>
+								</ul>
+								<div class="cwbc_span">
+									<span class="active">1</span>
+									<span>2</span>
+									<span>3</span>
+								</div>
+							</div>
+							
+							<ul class="cwbr_ul">
+								<li><img src="img/cwine_right1.jpg" /></li>
+								<li><img src="img/cwine_right2.jpg" /></li>
+							</ul>
+						</div>
+					</div>
+					<div class="summer">
+						<img src="img/summer.png"  />
+					</div>
+					<!--中国白酒china-->
+					<div class="cwine clearfix">
+						<div class="cwine_top">
+							<h2>中国白酒</h2>
+							<ul class="cwt_ul">
+								<li><a href="#">茅台</a><span>|</span></li>
+								<li><a href="#">五粮液</a><span>|</span></li>
+								<li><a href="#">剑南春</a><span>|</span></li>
+								<li><a href="#">泸州老窖</a><span>|</span></li>
+								<li><a href="#">浓香</a><span>|</span></li>
+								<li><a href="#">酱香</a></li>
+							</ul>
+						</div>
+						<div class="cwine_bottom">
+							<ul class="cwbl_ul">
+								<li><img src="img/china_left1.jpg" /></li>
+								<li><img src="img/china_left2.jpg" /></li>
+								<li><img src="img/china_left3.jpg" /></li>
+								<li><img src="img/china_left4.jpg" /></li>
+								<li><img src="img/china_left5.jpg" /></li>
+								<li><img src="img/china_left6.jpg" /></li>
+								<li><img src="img/china_left7.jpg" /></li>
+								<li><img src="img/china_left8.jpg" /></li>
+								<li><img src="img/china_left9.jpg" /></li>
+								<li><img src="img/china_left10.jpg" /></li>
+							</ul>
+							<div class="cwb_center">
+								<ul class="cwbc_ul">
+									<li><img src="img/china_banner1.jpg"/></li>
+									<li><img src="img/china_banner2.jpg"/></li>
+									<li><img src="img/china_banner3.jpg"/></li>
+								</ul>
+								<div class="cwbc_span">
+									<span class="active">1</span>
+									<span>2</span>
+									<span>3</span>
+								</div>
+							</div>
+							
+							<ul class="cwbr_ul">
+								<li><img src="img/china_right1.jpg" /></li>
+								<li><img src="img/china_right2.jpg" /></li>
+							</ul>
+						</div>
+					</div>
+					
+					<!--爆款精选-->
+					<div class="cspent clearfix">
+						<div class="cspent_left">
+							<div class="cspentl_top">
+								<h2>爆款精选</h2>
+								<div class="cstlt">
+									<dl>
+										<dt><img src="img/baijiu1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/baijiu1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/baijiu1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/baijiu1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/baijiu1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="cspentl_bottom">
+								<h2>爆款精选</h2>
+								<div class="cstlb">
+									<dl>
+										<dt><img src="img/baijiu1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/baijiu1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/baijiu1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/baijiu1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/baijiu1.png" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+						<div class="cspent_right">
+							<ul class="csr_ul">
+								<li><span>1</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>2</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>3</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>4</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>5</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>6</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>7</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>8</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>9</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>10</span><a href="#">拉伸红酒杯</a></li>
+							</ul>
+						</div>
+					</div>
+					<!--陈年老酒old-->
+					<div class="cwine clearfix">
+						<div class="cwine_top">
+							<h2>陈年老酒</h2>
+							<ul class="cwt_ul">
+								<li><a href="#">80年代</a><span>|</span></li>
+								<li><a href="#">90年代</a><span>|</span></li>
+								<li><a href="#">2000年代</a><span>|</span></li>
+								<li><a href="#">2003年</a><span>|</span></li>
+								<li><a href="#">2005年</a><span>|</span></li>
+								<li><a href="#">2008年</a></li>
+							</ul>
+						</div>
+						<div class="cwine_bottom">
+							<ul class="cwbl_ul">
+								<li><img src="img/old_left1.jpg" /></li>
+								<li><img src="img/old_left2.jpg" /></li>
+								<li><img src="img/old_left3.jpg" /></li>
+								<li><img src="img/old_left4.jpg" /></li>
+								<li><img src="img/old_left5.jpg" /></li>
+								<li><img src="img/old_left6.jpg" /></li>
+								<li><img src="img/old_left7.jpg" /></li>
+								<li><img src="img/old_left8.jpg" /></li>
+								<li><img src="img/old_left9.jpg" /></li>
+								<li><img src="img/old_left10.jpg" /></li>
+							</ul>
+							<div class="cwb_center">
+								<ul class="cwbc_ul">
+									<li><img src="img/old_banner1.jpg"/></li>
+									<li><img src="img/old_banner2.jpg"/></li>
+									<li><img src="img/old_banner3.jpg"/></li>
+								</ul>
+								<div class="cwbc_span">
+									<span class="active">1</span>
+									<span>2</span>
+									<span>3</span>
+								</div>
+							</div>
+							
+							<ul class="cwbr_ul">
+								<li><img src="img/old_right1.jpg" /></li>
+								<li><img src="img/old_right2.jpg" /></li>
+							</ul>
+						</div>
+					</div>
+					
+					<!--高性价比酒-->
+					<div class="cspent clearfix">
+						<div class="cspent_left">
+							<div class="cspentl_top">
+								<h2>高性价比酒</h2>
+								<div class="cstlt">
+									<dl>
+										<dt><img src="img/laojiu1.jpg" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/laojiu1.jpg" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/laojiu1.jpg" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/laojiu1.jpg" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/laojiu1.jpg" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="cspentl_bottom">
+								<h2>高性价比酒</h2>
+								<div class="cstlb">
+									<dl>
+										<dt><img src="img/laojiu1.jpg" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/laojiu1.jpg" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/laojiu1.jpg" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/laojiu1.jpg" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/laojiu1.jpg" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+						<div class="cspent_right">
+							<ul class="csr_ul">
+								<li><span>1</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>2</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>3</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>4</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>5</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>6</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>7</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>8</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>9</span><a href="#">拉伸红酒杯</a></li>
+								<li><span>10</span><a href="#">拉伸红酒杯</a></li>
+							</ul>
+						</div>
+					</div>
+					<!--酒具prop-->
+					<div class="cprop clearfix">
+						<div class="cprop_top">
+							<h2>酒具</h2>
+							<ul class="cwt_ul">
+								<li><a href="#">酒刀</a><span>|</span></li>
+								<li><a href="#">酒杯</a><span>|</span></li>
+								<li><a href="#">酒醒器</a><span>|</span></li>
+								<li><a href="#">酒柜</a><span>|</span></li>
+								<li><a href="#">酒鼻子</a><span>|</span></li>
+								<li><a href="#">酒盒</a></li>
+							</ul>
+						</div>
+						<div class="cprop_bottom">
+							<div class="cpb_left">
+								<div class="cpbl_top">
+									<ul class="cwbl_ul">
+										<li><img src="img/prop_left1.jpg" /></li>
+										<li><img src="img/prop_left2.jpg" /></li>
+										<li><img src="img/prop_left3.jpg" /></li>
+										<li><img src="img/prop_left4.jpg" /></li>
+										<li><img src="img/prop_left5.jpg" /></li>
+										<li><img src="img/prop_left6.jpg" /></li>
+										<li><img src="img/prop_left7.jpg" /></li>
+										<li><img src="img/prop_left8.jpg" /></li>
+										<li><img src="img/prop_left9.jpg" /></li>
+										<li><img src="img/prop_left10.jpg" /></li>
+									</ul>
+									<div class="cwbl_center">
+										<ul class="cwblc_ul">
+											<li><img src="img/prop_banner.jpg"/></li>
+										</ul>
+									</div>
+								</div>
+								<div class="cpbl_bottom">
+									<dl>
+										<dt><img src="img/pb1.JPG" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/pb2.JPG" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/pb3.JPG" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/pb4.JPG" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt><img src="img/pb5.JPG" /></dt>
+										<dd>
+											<a href="#">松木双合</a>
+											<a href="#">pine double box</a>
+											<p>￥30.0</p>
+											<span>售出：1314</span>
+											<span>好评：95%</span>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="cpb_right">
+								<ul class="cpbr_ul">
+									<li><span>1</span><a href="#">拉伸红酒杯</a></li>
+									<li><span>2</span><a href="#">拉伸红酒杯</a></li>
+									<li><span>3</span><a href="#">拉伸红酒杯</a></li>
+									<li><span>4</span><a href="#">拉伸红酒杯</a></li>
+									<li><span>5</span><a href="#">拉伸红酒杯</a></li>
+									<li><span>6</span><a href="#">拉伸红酒杯</a></li>
+									<li><span>7</span><a href="#">拉伸红酒杯</a></li>
+									<li><span>8</span><a href="#">拉伸红酒杯</a></li>
+									<li><span>9</span><a href="#">拉伸红酒杯</a></li>
+									<li><span>10</span><a href="#">拉伸红酒杯</a></li>
+								</ul>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		<!--guide-->
+			<div id="guide">
+				<div class="guide com">
+					<div class="guide_hh">
+						<h2>也买酒承诺</h2>
+						<div class="guide_h3">
+							<h3><img src="img/zheng.jpg"  /></h3>
+							<h3>正品保障</h3>
+						</div>
+						<div class="guide_h3">
+							<h3><img src="img/30.jpg"  /></h3>
+							<h3>30天退换货</h3>
+						</div>
+						<div class="guide_h3">
+							<h3><img src="img/dengpo.jpg"  /></h3>
+							<h3>恒温恒湿仓</h3>
+						</div>
+						<div class="guide_h3">
+							<h3><img src="img/car.jpg"  /></h3>
+							<h3>免运费</h3>
+						</div>
+						<div class="guide_h3">
+							<h3><img src="img/money.jpg"  /></h3>
+							<h3>慢就返</h3>
+						</div>
+						<!--<h3><img src="img/dengpo.jpg"  />恒温恒湿仓</h3>
+						<h3><img src="img/car.jpg"  />免运费</h3>
+						<h3><img src="img/money.jpg"  />慢就返</h3>-->
+					</div>
+					<div class="guide_ul">
+						<ul>
+							<li>
+								<h3>购物指南</h3>
+								<p>
+									<a href="#">帐户注册</a>
+									<a href="#">购物流程</a>
+									<a href="#">积分制度</a>
+									<a href="#">礼品卡</a>
+									<a href="#">会员权益</a>
+									<a href="#">常见问题</a>
+								</p>
+							</li>
+							<li>
+								<h3>支付帮助</h3>
+								<p>
+									<a href="#">货到付款</a>
+									<a href="#">在线支付</a>
+									<a href="#">银行转帐</a>
+									<a href="#">发票制度</a>	
+								</p>
+							</li>
+							<li>
+								<h3>专业特色</h3>
+								<p>
+									<a href="#">存酒库</a>
+									<a href="#"> 酒类交易中心</a>
+									<a href="#">全国百家门店分布</a>
+									<a href="#">香港免税</a>
+									<a href="#">期酒交易</a>
+									<a href="#">I酒窖</a>
+								</p>
+							</li>
+							<li>
+								<h3>物流配送</h3>
+								<p>
+									<a href="#">150元免运费</a>
+									<a href="#">配送范围</a>
+									<a href="#">慢就返</a>
+								</p>
+							</li>
+							<li>
+								<h3>关于我们</h3>
+								<p>
+									<a href="#">关于也买酒</a>
+									<a href="#">联系我们</a>
+									<a href="#">诚招英才</a>
+									<a href="#">媒体聚焦</a>
+									<a href="#">隐私声明</a>
+									<a href="#">4008208060</a>
+								</p>
+							</li>
+							<li>
+								<h3>招商合作</h3>
+								<p>
+									<a href="#">经销商招募</a>
+									<a href="#">连锁店招募</a>
+									<a href="#">也买联盟</a>
+								</p>
+							</li>
+							<li>
+								<h3>也买酒APP下载</h3>
+								<p>
+									<span>下载也买酒APP 每月18手机购酒节<br  />精彩不错过</span><br  />
+									<span>也买酒官方微信</span><br  />
+									<h3>也买酒官方微信下载</h3>
+									<span>关注微信、劲爆优惠触手可得！</span><br  />
+									<img src="img/微信22.jpg"  />
+								</p>
+							</li>
+							<li class="li_end">
+								<img src="img/appstore.jpg" />
+								<img src="img/android.jpg" />
+								<p>
+									<img src="img/weixin333.jpg"  />
+									<img src="img/app99.jpg"  />
+								</p>
+								<div class="liend_div">
+									<a href="#"><img src="img/weibo1.jpg"  /></a>
+									<span>新浪微博</span>
+									<span>立即关注</span>
+									<span>也买酒官方微博</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		<!--footer-->
+			<div id="footer">
+				<ul class="footer_ul">
+					<li><a href="#">关于也买酒</a></li>
+					<li><a href="#">联系我们</a></li>
+					<li><a href="#">媒体聚焦</a></li>
+					<li><a href="#">诚招英才</a></li>
+					<li><a href="#">隐私声明</a></li>
+				</ul>
+				<p>
+					<a hre="#">友情链接：</a>
+					<a hre="#">商酒咨询网</a>
+					<a hre="#">959品牌招商网</a>
+					<a hre="#">邛酒电子商务网</a>
+					<a hre="#">123美食网</a>
+					<a hre="#">重庆婚庆</a>
+					<a hre="#">酒招商</a>
+					<a hre="#">烧酒网</a>
+					<a hre="#">57团购网</a>
+					<a hre="#">中国糖酒网</a>
+					<a hre="#">中国品牌网</a>
+					<a hre="#">搜狐焦点烟台站</a>
+					<a hre="#">秒客网</a>
+					<a hre="#">中国糖酒门</a>
+				</p>
+				<div class="footer_span1">
+					<span>消费者最喜欢的网站top100</span>|
+					<span>仅限18周岁以上人士购买</span>|
+					<span>网络社会征信网</span>|
+					<span>上海工商</span>|
+					<span>京工网安备</span>|
+				</div>
+				<div class="footer_span2">
+					<span>Copyright 2006-2015 也买酒 yesmywine.com 版权所有 </span>|
+					<span> 沪ICP备15036938号</span>
+				</div>
+				<div class="footer_img">
+					<img src="img/chengxin.png"  />
+					<img src="img/hugong.jpg"  />
+				</div>
+			</div>
+	</body>
+</html>

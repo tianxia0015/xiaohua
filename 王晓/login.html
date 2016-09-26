@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<link href="img/yymm.ico" rel="shortcut icon" />
+		<link rel="stylesheet" type="text/css" href="css/com.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<script src="js/cookie.js"></script>
+		<script>
+			window.onload = function(){
+				//登录页面
+				var input = document.getElementsByTagName("input");
+				var identify = document.getElementById("identify");
+				var legal1 = document.getElementById("legal1");
+				var legal2 = document.getElementById("legal2");
+				//获取Cookie中的帐号
+				var oldUserName = getCookie("username"); 
+				//console.log(oldUserName);
+				var oldPassWord = getCookie("password");
+			//	console.log(oldUserName);
+//				if(oldUserName){
+//					input[0].value = oldUserName;
+//				}
+//				if(oldPassWord){
+//					input[1].value = oldPassWord;
+//				}
+
+				var x=y=false;
+				//onchange
+				//1.手机号
+				var str=null;
+				input[0].onblur = function(){
+					//1.手机号
+					//获取输入的内容
+					str = this.value;
+					//console.log(str)
+					//返回的是str对应的密码
+//					pas=getCookie(oldUserName);
+//					
+//					console.log(pas);
+					var isTrue = /^1\d{10}$/.test(str);
+					if(isTrue){
+						legal1.innerHTML = "您输入的手机号合法";
+						//y=true;
+					}else{
+						legal1.style.visibility = "visible";
+						legal1.innerHTML = "请输入手机号：";
+						//y=false;
+					}
+				}
+				
+				var str_1 = null;
+				//2.密码
+				input[1].onblur = function(){
+					//2.密码
+					//w匹配任意多个字母 下划线
+					str_1= this.value;
+					//console.log(str_1)
+					var isTrue = /^\w{6,16}$/.test(str_1);
+					if(isTrue){
+						legal2.innerHTML = "您输入密码合法";
+						//x=true;
+					}else{
+						legal2.style.visibility = "visible";
+						legal2.innerHTML = "请输入合法的密码";
+						//x=false;
+					}
+					
+				}
+				//5.点击登录
+				input[3].onclick = function(){
+					/*console.log(str);
+					console.log(str_1);*/
+					if(oldUserName==str && oldPassWord == str_1){
+						window.location.href="index.html";
+					}else{
+						alert('对不起你输入的账号密码不一致');
+					}
+				/*	if(input[2].checked){
+							var d = new Date();
+							d.setDate(d.getDate()+7);
+							//alert("欢饮您，您已经登录成功");
+							//保存账号到cookie中
+							setCookie("username",name,d);
+							setCookie("password",pwd,d);
+					}*/
+					/*if (x&&y) {
+						window.location.href="index.html";
+						x=y=false;
+					}else{
+						alert('对不起你输入的账号密码不一致');	
+					}*/
+					
+//					var name = input[0].value;
+//					var pwd = input[1].value;
+//					var d = new Date();
+//						d.setDate(d.getDate()+7);
+//						//保存账号到cookie中
+//						setCookie("username",name,d);
+//						setCookie("password",pwd,d);
+					
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<!--reg_logo-->
+		<div id="reg_logo">
+			<div class="reg_logo com">
+				<h2><img src="img/register_logo.jpg" /></h2>
+				<div class="reg_right">
+					<div class="reg_h3">
+						<h3><img src="img/reg_zheng.jpg"  /></h3>
+						<h3>正品保障</h3>
+					</div>
+					<div class="reg_h3">
+						<h3><img src="img/reg_30.jpg"  /></h3>
+						<h3>30天退换货</h3>
+					</div>
+					<div class="reg_h3">
+						<h3><img src="img/reg_temp.jpg"  /></h3>
+						<h3>恒温恒湿仓</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--login-->	
+		<div id="login">
+			<div class="login com">
+				<div class="login_left">
+					<img src="img/login_pic.jpg"  />				
+				</div>
+				<div class="login_right">
+					<h3>登录也买酒</h3>
+					<form>
+						<input class="input" type="text" placeholder="请输入手机号" />
+						<p id="legal1"></p>
+						<input class="input" type="password" /><br  />
+						<p id="legal2"></p>
+						<input type="checkbox"  /><label>自动登录</label><br  />
+						<input id="sub" type="button" value="登录" />
+					</form>
+					<a href="register.html">[注册新账号]</a>
+					<p>使用合作网站账号登录：</p>
+					<h3>
+						<img src="img/login_weibo.jpg"  />
+					</h3>
+				</div>
+			</div>
+		</div>
+		<!--reg_footer-->
+			<div id="footer com">
+				<div class="footer_span1">
+					<span>消费者最喜欢的网站top100</span>|
+					<span>仅限18周岁以上人士购买</span>|
+					<span>网络社会征信网</span>|
+					<span>上海工商</span>|
+					<span>京工网安备</span>|
+				</div>
+				<div class="footer_span2">
+					<span>Copyright 2006-2015 也买酒 yesmywine.com 版权所有 </span>|
+					<span> 沪ICP备15036938号</span>
+				</div>
+				<div class="footer_img">
+					<img src="img/chengxin.png"  />
+					<img src="img/hugong.jpg"  />
+				</div>
+			</div>
+	</body>
+</html>

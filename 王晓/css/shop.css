@@ -1,0 +1,112 @@
+
+#shop{
+	height:480px;
+	background: #fbfaf9;
+}
+#shop .shop{
+		
+}
+#shop .shop .shop_top{
+	padding: 5px 0;
+}
+#shop .shop .shop_top a{
+	color:#666;
+	font-size:12px;
+}
+#shop .shop .shop_bottom{
+	height:439px;
+}
+#shop .shop .shop_bottom .sb_left {
+	width:381px;
+	height:439px;
+	float:left;
+	position:relative;
+	border:1px solid #ccc;
+	
+}
+#shop .shop .shop_bottom .sb_left img{
+	height: 355px;
+	display: block;
+	margin:40px 0 0 85px;
+}
+#shop .shop .shop_bottom .sb_right{
+	float: left;
+	margin-left: 20px;
+}
+#shop .shop .shop_bottom .sb_right h3{
+	display: inline-block;
+}
+#shop .shop .shop_bottom .sb_right .sbr_span{
+	margin-top:10px;
+	padding: 20px 0px;
+	border-bottom: 1px solid #666;
+}
+.shop .shop_bottom .sb_right .sbr_span span{
+	display: inline-block;
+	font-size: 12px;
+	color: #999;
+}
+#shop .shop .shop_bottom .sb_right .sbr_span .color{
+	color:#0099cc;
+}
+#shop .shop .shop_bottom .sb_right .sbr_cen{
+	margin: 20px 0;		
+}
+#shop .shop .shop_bottom .sb_right .sbr_cen span{
+	
+}
+#shop .shop .shop_bottom .sb_right .sbr_cen  p{
+	margin-top: 35px;
+	display: inline-block;		
+}
+#shop .shop .shop_bottom .sb_right .sbr_cen  b{
+	display: inline-block;
+	font-size: 26px;		
+}
+#shop .shop .shop_bottom .sb_right .sbr_add{
+	width:600px;
+	height:165px;
+	padding:20px;
+	background: #ffffe8;
+	border: 1px dashed #fec083;
+}
+#add_num{
+	text-align: center;
+}
+.sbr_add a{
+	text-decoration: none;
+	color:#fff;
+}
+#shop .shop .shop_bottom .sb_right .sbr_add .add_span{
+	display: inline-block;
+	width:20px;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+	border: 2px solid #e6e1db;
+}
+#shop .shop .shop_bottom .sb_right .sbr_add .add_span{
+	display: inline-block;
+	width:20px;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+	border: 2px solid #e6e1db;
+}
+#shop .shop .shop_bottom .sb_right .sbr_add input{
+	display: inline-block;
+	width:30px;
+	height:20px;
+	margin-bottom: 22px;
+}
+#shop .shop .shop_bottom .sb_right .sbr_add .add_car{
+	width: 210px;
+	height: 45px;
+	line-height:45px;
+	margin-top: 21px;
+	text-align: center;
+	font-size: 24px;
+	color: #fff;
+	background: #e04949;
+	
+}

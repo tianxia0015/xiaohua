@@ -1,0 +1,381 @@
+/*@charset "utf-8";
+/*-------------------------
+# 	[Master Stylesheet] 
+#  
+# 	Project:		主站通用顶部样式
+# 	Version:		2.2
+#   Last Change:    2016-09-12
+-------------------------*/
+/*== reset style ==*/
+*{
+	margin:0;
+	padding:0;
+}
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-size:100%; }
+address, cite, dfn, em, var, i { font-style:normal; }
+code, kbd, pre, samp { font-family:courier new, courier, monospace; }
+small { font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; hide-focus:expression(this.hideFocus=true); outline:none; cursor:pointer; }
+a:hover { text-decoration:underline; }
+sup { vertical-align:text-top; }
+sub { vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; }
+pre { white-space:pre-wrap; white-space:-moz-pre-wrap; white-space:-pre-wrap; white-space:-o-pre-wrap; }
+article, aside, dialog, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video, details, summary { margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent; }
+article, aside, dialog, figure, footer, header, hgroup, nav, section, figcaption, details, summary { display:block; }
+* html, * html body { background-image:url(about:blank);background-attachment:fixed; }
+* html { zoom:expression(function(ele){ele.style.zoom="1";document.execCommand("BackgroundImageCache", false, true);}(this)); }
+* html pre { word-wrap:break-word; white-space:normal; }
+/*== common style ==*/
+.bold{font-weight:bold}
+.f14{font-size:14px}
+.ma{margin:0 auto}
+.mt10{margin-top:10px}
+.mt20{margin-top:20px}
+.mt30{margin-top:30px}
+.mb10{margin-bottom:10px}
+.mb20{margin-bottom:20px}
+.mb30{margin-bottom:30px}
+.p10{padding:10px}
+.p20{padding:20px}
+.p30{padding:30px}
+.pb10{padding-bottom:10px}
+.pb20{padding-bottom:20px}
+.pb30{padding-bottom:30px}
+.tal{text-align:left!important}
+.tac{text-align:center!important}
+.tar{text-align:right!important}
+.fl{float:left!important}
+.fr{float:right!important}
+.fn{float:none!important}
+.clear{clear:both;font-size:0;visibility:hidden;line-height:0;height:0}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{*zoom:1}
+.clearr{clear:both;height:0;overflow: hidden;}
+.relative{position:relative}
+.absolute{position:absolute}
+.fixed{position:fixed}
+.hidden{display:none}
+.sep{color:#ddd;font-family:Arial;margin:0 5px}
+.sep10{color:#ddd;font-family:Arial;margin:0 10px}
+.ul,.uline,.underline,a.ul,a.ul:hover,a.uline,a.uline:hover,a.underline,a.underline:hover{text-decoration:underline}
+.noul,a.noul,a.noul:hover,.nouline,a.nouline,a.nouline:hover{text-decoration:none}
+.noime{ime-mode:disabled}
+.nowrap{white-space:nowrap}
+.wordwrap{word-break:break-all;word-wrap:break-word;overflow:hidden}
+.short,.ellipsis li{display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.disabled{filter:alpha(opacity=30);-moz-opacity:.3;opacity:.3}
+.content,.wcontent{width:1200px;margin-left:auto;margin-right:auto;*zoom:1}
+.content:after,.wcontent:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.w960{width:960px;margin:0 auto}
+
+
+
+.com{width:1200px;margin:0 auto;}
+
+/*@charset "utf-8";
+/*-------------------------
+# 	[Master Stylesheet] 
+#  
+# 	Project:		主站通用顶部样式
+# 	Version:		2.2
+#   Last Change:    2016-9-12
+-------------------------*/
+/*== reset style ==*/
+.com{
+	width:1200px;
+	margin:0 auto;
+}
+/*header*/
+#header{
+	width:100%;
+	height:30px;
+	background:#ece7e3;
+	border:1px solid #e4dfda;
+	}
+/*header_top*/
+#header .header{
+	height:30px;
+	}
+#header .header  p{
+	height:30px;
+	font:12px/30px "";
+	display:inline-block;
+	margin-right:17px;
+	}
+#header .header  a{
+	display:inline-block;
+	font:700 12px/30px "微软雅黑";
+	color:#85726c;
+	}
+#header .header  a:hover{
+	color:#c53f4c;
+	}
+#header .header  span{
+	padding-left:5px;
+	padding-right:5px;
+	}
+
+#header .header  .ht_reg{
+	float:left;
+	}
+#header .header  .ht_li{
+	height:18px;
+	float:right;
+	}
+#header .header  .ht_li li{
+	height:30px;
+	line-height:30px;
+	float:left;
+	}
+/*！！！！！在这里需要注意：要想让li的有边框 高度和字体一样高 加一个a标签即可 左右距离用padding 不能用margin？？？*/
+/*还有ul来一个float:right 不需要给她宽度*/
+#header .header  .ht_li li a{
+	padding:0 10px 0 10px;
+	height:12px;
+	font:12px/12px "";
+	border-right:1px solid #ccc;
+	color:#85726c;
+	}
+#header .header  .ht_li li a:hover{
+	color:#c53f4c;
+	}
+/*logo*/
+#logo{
+	height:100px;
+	background:#f1eeed;
+	}
+/*logo_left*/
+#logo .logo .logo_left{
+	width:341px;
+	height:91px;
+	float:left;
+	padding-top:9px;
+	}
+/*logo_center search*/
+#logo .logo .search{
+	width:466px;
+	height:100px;
+	float:left;
+	margin-left:245px;
+	}
+#logo .logo .search .txt{
+	width:380px;
+	height:33px;
+	outline:medium;
+	border:1px solid #ed1c24;
+	margin-top:30px;
+	
+	}
+#logo .logo .search .search_ul{
+	width:420px;
+	height:35px;
+	margin-top:7px;
+	}
+#logo .logo .search .search_ul li{
+	float:left;
+	margin-right:15px;
+	}
+#logo .logo .search .search_ul li a{
+	font-size:12px;
+	color:#a89893;
+	}
+#logo .logo .search .search_ul li a:hover{
+	color:#c53f4c;
+	}
+/*logo_right*/
+#logo .logo .logo_right{
+	float:right;
+	margin-top:30px;
+	height:100px;
+	}
+#logo .logo .logo_right a{
+	text-decoration:none;
+	display:block;
+	padding-left:5px;
+	width:116px;
+	height:33px;
+	font:12px/33px "";
+	color:#fff;
+	background:#a48471 url(../img/shopping_carIcon.jpg) no-repeat 10px 8px;
+	text-align:center;
+	}
+
+/*!!!!!!文本框为什么和按钮左右有空隙 */
+/**
+ * 解决方案:(1)把input写在同一行
+ * 		   (2)给按钮设置文本 margin-left:-4px;
+ */
+#logo .logo .search .btn{
+	width:80px;
+	height:35px;
+	background:#ed1c24;
+	margin-top:30px;
+	border:1px solid #ed1c24;
+	margin-left:-4px;
+	}
+/*nav*/
+#nav{
+	width:100%;
+	height:35px;
+	background:#d3161b;
+	}
+#nav .nav{
+	height:35px;
+	}
+/*nav h4*/
+#nav .nav h4{
+	width:200px;
+	height:35px;
+	line-height:35px;
+	background:#a11011;
+	text-align:center;
+	color:#fff;
+	float:left;
+	}
+/*nav_ul*/
+#nav .nav .nav_ul{
+	heigth:35px;
+	}
+#nav .nav .nav_ul .end{
+	background:none;
+	}
+#nav .nav .nav_ul li{
+	height:35px;
+	line-height:35px;
+	float:left;
+	padding:0 20px;
+	background:url(../img/nav_shuxian.jpg) no-repeat right;
+	color:#fff;
+	}
+#nav .nav h4:hover{
+	background:#bc0001;
+	}
+/*margin-left:-2px;把左边的那条竖线给压住 不过有浮动效果*/
+#nav .nav .nav_ul li:hover{
+	background:#bc0001;
+	margin-left:-2px;
+	}
+
+/*guide*/
+#guide{
+	width:100%;
+	height:450px;
+	background:#e8e8e8;
+	}
+/*guide_hh*/	
+.guide .guide_hh{
+	min-height:120px;
+	border-bottom:2px solid #d3161b;
+	margin-bottom:36px;
+}
+.guide .guide_hh h2{
+	font-size:25px;
+	color:#d3161b;
+	float:left;
+	margin:41px 19px 0 12px; 
+}
+.guide .guide_hh h3{
+	float:left;
+	height:40px;
+	line-height:40px;
+	color:#d3161b;
+	font-size:15px;
+	margin-right:10px;
+	
+}
+.guide .guide_h3{
+	margin:50px 40px;
+	height:40px;
+	line-height:40px;
+	float:left;
+}
+/*guide_ul*/
+.guide .guide_ul ul li{
+	margin:0 20px;
+	float:left;
+}
+.guide .guide_ul ul li h3{
+	color:#666;
+	margin-bottom:7px;
+}
+.guide .guide_ul ul li p a{
+	height:22px;
+	font:12px/22px "";
+	display:block;
+	color:#666;
+}
+
+.li_end p{
+	margin:10px 0;
+}
+.li_end .liend_div a{
+	display:inline-block;
+	width:39px;
+	height:39px;
+}
+.li_end img{
+	margin:0 5px;
+}
+/*footer*/
+#footer{
+	width:100%;
+	height:180px;
+	background:#fff;
+	}
+#footer .footer_ul{
+	text-align:center;
+	width:100%;
+	height:40px;
+	font:12px/40px "";
+	background:#f8f8f5;
+	}
+#footer .footer_ul li{
+	display:inline;
+	background:url(../img/footer_shuxian.jpg) no-repeat right;
+	padding:0 20px;
+	}
+#footer .footer_ul li a{
+	color:#867666;
+	}
+#footer p{
+	height:30px;
+	font:12px/30px "";
+	text-align:center;
+	}
+#footer p a{
+	color:#ccc;
+	}
+.footer_span1{
+	width:100%;
+	text-align:center;
+	}
+.footer_span1 span{
+	width:100%;
+	font-size:12px;
+	color:#999;
+	padding:0 5px;
+	}
+.footer_span2{
+	margin-top:5px;
+	text-align:center;
+}
+.footer_span2 span{
+	font-size:12px;
+	padding:0 5px;
+	color:#999;
+}
+.footer_img{
+	margin-top:10px;
+	text-align:center;
+}
+.footer_img img{
+	width:112px;
+	height:40px;
+}

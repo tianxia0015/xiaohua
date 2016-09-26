@@ -1,0 +1,121 @@
+.com{
+	width:1200px;
+	margin:0 auto;
+}
+/*reg_logo*/
+#reg_logo{
+	width:100%;
+	min-height:98px;
+	border-bottom:5px solid #bc0e31;
+}
+.reg_logo{
+	min-height:98px;
+	
+}
+.reg_logo h2{
+	float:left;
+	height:77px;
+	padding-top:21px;
+}
+.reg_logo .reg_right{
+	float:right;
+}
+.reg_right .reg_h3{
+	height:77px;
+	padding-top:21px;
+	float:left;
+	margin-right:80px;
+}
+/*reg_center*/
+#login{
+	height:487px;
+	margin-bottom:20px;;
+	border-bottom:1px solid #ccc;	
+}
+#login .login{
+	height:550px;
+	margin-top:31px;
+}
+.login_left{
+	float:left;
+	width:360px;
+	height:480px;
+	float:left;
+	margin-left:178px;
+}
+.login_right{
+	float:right;
+	width:366px;
+	height:400px;
+	border:1px solid #ccc;
+	padding:30px 0 0 40px;
+}
+.login_right .input{
+	width: 298px;
+	height: 30px;
+	border:1px solid #ccc;
+	margin-top:16px;
+}
+#legal1{
+	color:red;
+	visibility: hidden;
+}
+#legal2{
+	color:red;
+	visibility: hidden;
+}
+.login_right a{
+	display:inline-block;
+	margin-top:14px;
+	margin-bottom:20px;
+	color: #3472b2;
+}
+.login_right p{
+	margin-bottom:13px;
+}
+#sub{
+	width:300px;
+	height: 38px;
+	line-height:38px;
+	background: #d70000;
+	border:1px solid #A11011;
+	margin-top:20px;
+	color:#fff;
+	font-size:16px;
+}
+/*footer*/
+#footer p{
+	height:30px;
+	font:12px/30px "";
+	text-align:center;
+	}
+#footer p a{
+	color:#ccc;
+	}
+.footer_span1{
+	width:100%;
+	text-align:center;
+	}
+.footer_span1 span{
+	width:100%;
+	font-size:12px;
+	color:#999;
+	padding:0 5px;
+	}
+.footer_span2{
+	margin-top:19px;
+	text-align:center;
+}
+.footer_span2 span{
+	font-size:12px;
+	padding:0 5px;
+	color:#999;
+}
+.footer_img{
+	margin-top:10px;
+	text-align:center;
+}
+.footer_img img{
+	width:112px;
+	height:40px;
+}

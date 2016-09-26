@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="img/yymm.ico" rel="shortcut icon" />
+		<link rel="stylesheet" type="text/css" href="css/com.css" />
+		<style>
+			table{
+				width:100%;
+				height:60px;	
+			}
+			tr{
+				border: 1px solid #ccc;
+			}
+			th{
+				background: #ccc;
+			}
+			td{
+				padding:50px;
+				text-align: center;
+				border: 1px solid #ccc;
+			}
+			td img{
+				width:30px;
+				height:160px;
+			}
+			.car_select{
+				width:100%;
+				height:30px;
+				line-height:30px;
+				background:#ccc;
+			}
+			.car_select input{
+				margin-left:10px;
+			}
+			.car_select span{
+				margin-left: 10px;
+			}
+			.td_span1 span{
+				display:inline-block;
+				width:18px;
+				height:18px;
+				border:3px solid #ccc;
+			}
+			.td2{
+				position: relative;
+			}
+			.td2 span{
+				position: absolute;
+				top:113px;
+				left:135px;
+			}
+			#add_num{
+				width:20px;
+				height:20px;
+				text-align:center;
+			}
+			.sm{
+				width:300%;
+				height:30px;
+				
+			}
+			.sm .sum{
+				margin-left:960px;
+			}
+			.sm .sum span{
+				display:inline-block;
+				height:30px;
+				font-size:16px;
+				color:red;
+			}
+			.sm .sum .jiesuan{
+				display: inline-block;
+				width: 150px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				background: red;
+				color: #fff;
+			}
+		</style>
+		<script src="js/jquery-3.0.0.js"></script>
+		<script>
+		window.onload = function(){
+			var allObj = getCookies();
+			//console.log(allObj);
+			for(var i = 0; i < allObj.length; i++){
+			 	var tempEr = $('.tab').eq(0).clone();
+			 	//console.log(allObj[0][0]);
+			 	//************* 复制操作 begin
+          		tempEr.find('.td2').children('span').text(allObj[i][0]); //给标题赋值
+          		//tempEr.find('.td3').text(allObj[i][1]);
+          		//console.log(allObj)
+          		 
+          		//tempEr.find('.td2').find("img").attr("src","allObj[i][3]");
+          		var count = parseInt(allObj[i][1])*(parseInt(allObj[i][2]));
+          		//tempEr.find('.td3').text(count + ".00");
+          		tempEr.children('.td_span1').children('input').val(allObj[i][2]);
+          		 
+          		$('.tab').eq(0).after(tempEr);
+          		//遍历复制后,删除是第一个,因为只是让它做模板,使用完了后,应该让它消失.(不理解,可以注释看一下效果)
+          	}
+			$('.tab').eq(0).remove();
+			 //购车的 -数量  拿到 文本框里当前的值 进行 -- 贱贱
+	        $(".span1").on('click', function(){
+	
+	            if(parseInt($(this).next('input').val()) > 1){
+	
+	                var num = parseInt($(this).next('input').val());
+	                $(this).next('input').val(num - 1);
+	
+	                $(this).parent().next().text(parseInt($(this).parent().prev().text()) * (num - 1) + ".00");
+	            }
+	            getTotal();//数量发生了变化,页面上的 " 商品∧总价（不含运费） "的总价应该变化
+        	})
+	        
+	         //购物车的 加 数量 +    | 拿到 文本框里当前的值 进行 ++
+	        $(".span2").on('click', function(){
+	
+	            $(this).prev('input').val(parseInt($(this).prev('input').val()) + 1);
+	            var num = parseInt($(this).prev('input').val());
+	            $(this).parent().next().text(parseInt($(this).parent().prev().text()) * (num) + ".00");
+	            getTotal(); //要计算金额
+	        })
+			
+			 //每一个购物车里的 cbx 复选框  添加一个点击事件.需要计算金额
+	        $('.cbxOrder').on('click', function(){
+	            getTotal();//要计算金额
+	
+	        })
+			
+			//全选
+	        $('#cbxAll').on('click', function(){
+	            //相信你能理解,以前讲过,多选项最简洁的写法.把当前的值复制给所有的 checkeBox
+	            $('.cbxOrder').prop('checked', $(this).prop('checked'));
+	            //全选后 应该再次计算金额
+	            getTotal();
+	        })
+			
+			
+		}
+		
+		 //要计算金额
+	    function getTotal(){
+	        //拿到 可以单个单个选的cbx
+	        var total = 0;
+	        $('.cbxOrder').each(function(index, eml){
+	            if($(eml).prop('checked')){
+	                total += parseInt($('.td5').eq(index).text());
+	            }
+	        });
+	        $('total_money').text("¥ " + total + ".00");
+	
+	        $('#total').text($('.cbxOrder:checked').length);
+	    }
+		/*getCookies*/	
+		function getCookies(){
+
+	        var obj = [];
+	        //var cookieText = decodeURIComponent(document.cookie);
+	        var $cookies = decodeURIComponent(document.cookie);
+	        //如果没有多个,就没有 ;  indexOf  如果匹配上了,就会返回索引,大于0 ,没有返回-1
+	        if($cookies.indexOf(';') != -1){
+	            var arr = $cookies.split(';');//截取多个
+	            for(var i = 0; i < arr.length; i++){
+	                var valArr = arr[i].split('=');
+	                var valArr2 = valArr[0].split('|');//我们想要的值.
+	                var obj2 = new Array();// 定义一个数组 用于存储遍历里面的值.
+	
+	                for(var j = 0; j < valArr2.length; j++){
+	                    obj2.push(valArr2[j]);//追加数组.
+	                }
+	                obj.push(obj2);//最后把 遍历后的值 塞到 obj对象,并返回出去
+	                //              console.log("------------------------------------------");
+	            }
+	
+	        } else {
+	            // 否则 只有一条记录
+	
+	            var valArr = $cookies.split('=');
+	            var valArr2 = valArr[0].split('|');//我们想要的值.
+	            var obj2 = new Array();// 定义一个数组 用于存储遍历里面的值.
+	
+	            for(var j = 0; j < valArr2.length; j++){
+	                obj2.push(valArr2[j]);//追加数组.
+	            }
+	            obj.push(obj2);//最后把 遍历后的值 塞到 obj对象,并返回出去
+	
+	        }
+
+        	return obj;//最后把obj返回出去
+    	}
+			/*加减判断*/
+			
+			/*$(function(){
+	        //左边 贱贱
+	        $(".add_span").eq(0).on("click", function(){
+				$(this).css("background","pink").css("border","1px solid red");
+	            var num = $("#add_num").val();
+	            console.log(num);
+	            //如果大于才能 --
+	            if(num > 1){
+	                num--;
+	            }
+	
+	            $("#add_num").val(num);//设置
+	        });
+	
+	        $(".add_span").eq(1).on("click", function(){
+				$(this).css("background","pink").css("border","1px solid red");;
+	            var num = $("#add_num").val();
+	            //如果大于才能 --
+	            num++;
+	            if(num > 99){
+	                alert("库存不足");
+	                num = 99;
+	                return
+	            }
+	            $("#add_num").val(num);
+	        })
+	    })*/
+		</script>
+	</head>
+	<body>
+		<div id="header">
+				<div class="header com">
+					<div class="ht_reg">
+						<p>99999位会员的选择</p>
+						<a href="login.html">登录</a><span>|</span><a href="register.html">注册</a>
+					</div>
+					<ul class="ht_li">
+						<li><a href="#">会员俱乐部</a></li>
+						<li><a href="#">签到</a></li>
+						<li>
+							<a href="#">
+								我的账户
+							</a>
+						</li>
+						<li><a href="#">手机版</a></li>
+						<li><a href="#">红酒交易中心</a></li>
+						<li><a href="#">也买服务</a></li>
+						<li><a href="#">设置勿扰</a></li>
+					</ul>
+				</div>
+			</div>
+		<!--logo-->
+			<div id="logo">
+				<div class="logo com">
+					<div class="logo_left">
+						<h1><img src="img/341index-82_logo.jpg" alt="这是logo" title="logo"/></h1>
+					</div>
+					<form class="search">
+						<input class="txt" type="text" placeholder="输入你要查找的商品名称" />
+						<input class="btn" type="button" value="搜索"  />
+						<ul class="search_ul">
+							<li><a href="#">中秋月饼/大闸蟹/礼盒</a></li>
+							<li><a href="#">婚庆整箱</a></li>
+							<li><a href="#">名装酒</a></li>
+							<li><a href="#">特色陈年老酒</a></li>
+							<li><a href="#">也买酒学院</a></li>
+						</ul>
+					</form>
+					<div class="logo_right">
+						<a href="#">购物车</a>
+					</div>
+				</div>
+			</div>
+		<!--nav-->
+			<div id="nav">
+				<div class="nav com">
+					<h4>选酒中心</h4>
+					<ul class="nav_ul clearfix">
+						<li>首页</li>
+						<li>超值抢购</li>
+						<li>精品闪购</li>
+						<li>名装特卖</li>
+						<li>香港免税</li>
+						<li class="end">国酒馆</li>
+					</ul>
+				</div>
+			</div>
+			<div id="car">
+				<div class="car com">
+					<table class="tab" border="1">
+						<tr>
+							<th><input id="cbxAll" type="checkbox" />全选</th>
+							<th>商品名称</th>
+							<th>单价</th>
+							<th>数量</th>
+							<th>小计</th>
+							<th>操作</th>
+						</tr>
+						<tr>
+							<td class="td1"><input class="cbxOrder" type="checkbox"/></td>
+							<td class="td2"><img src="img/redwine_small.jpg" /><span>康纳斯顿梅洛干红葡萄酒（黑标）</span></td>
+							<td class="td3">52</td>
+							<td class="td_span1"><span class="add_span span1">-</span><input id="add_num" type="text" value="1"/><span class="add_span span2">+</span></td>
+							<td class="td5">0.00</td>
+							<td class="td6"><a href="#">删除</a></td>
+						</tr>
+					</table>
+					<div class="car_select">
+						<input type="checkbox"  />全选
+						<span><a href="#">批量删除</a></span>						<span><a href="#">批量加入收藏夹</a></span>
+					</div>
+					<div class="sm">
+						<div class="sum">
+							<span>商品总数:</span><span class="total">1件</span>
+							<!--<span>商品总价:</span><span class="sum_total">￥0.00</span>-->
+						</div>
+						
+					</div><div class="sm">
+						<div class="sum">
+							<span class="jiesuan">去结算</span><span class="total_money">￥0.00</span>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+				</div>
+			</div>
+			<!--guide-->
+			<div id="guide">
+				<div class="guide com">
+					<div class="guide_hh">
+						<h2>也买酒承诺</h2>
+						<div class="guide_h3">
+							<h3><img src="img/zheng.jpg"  /></h3>
+							<h3>正品保障</h3>
+						</div>
+						<div class="guide_h3">
+							<h3><img src="img/30.jpg"  /></h3>
+							<h3>30天退换货</h3>
+						</div>
+						<div class="guide_h3">
+							<h3><img src="img/dengpo.jpg"  /></h3>
+							<h3>恒温恒湿仓</h3>
+						</div>
+						<div class="guide_h3">
+							<h3><img src="img/car.jpg"  /></h3>
+							<h3>免运费</h3>
+						</div>
+						<div class="guide_h3">
+							<h3><img src="img/money.jpg"  /></h3>
+							<h3>慢就返</h3>
+						</div>
+						<!--<h3><img src="img/dengpo.jpg"  />恒温恒湿仓</h3>
+						<h3><img src="img/car.jpg"  />免运费</h3>
+						<h3><img src="img/money.jpg"  />慢就返</h3>-->
+					</div>
+					<div class="guide_ul">
+						<ul>
+							<li>
+								<h3>购物指南</h3>
+								<p>
+									<a href="#">帐户注册</a>
+									<a href="#">购物流程</a>
+									<a href="#">积分制度</a>
+									<a href="#">礼品卡</a>
+									<a href="#">会员权益</a>
+									<a href="#">常见问题</a>
+								</p>
+							</li>
+							<li>
+								<h3>支付帮助</h3>
+								<p>
+									<a href="#">货到付款</a>
+									<a href="#">在线支付</a>
+									<a href="#">银行转帐</a>
+									<a href="#">发票制度</a>	
+								</p>
+							</li>
+							<li>
+								<h3>专业特色</h3>
+								<p>
+									<a href="#">存酒库</a>
+									<a href="#"> 酒类交易中心</a>
+									<a href="#">全国百家门店分布</a>
+									<a href="#">香港免税</a>
+									<a href="#">期酒交易</a>
+									<a href="#">I酒窖</a>
+								</p>
+							</li>
+							<li>
+								<h3>物流配送</h3>
+								<p>
+									<a href="#">150元免运费</a>
+									<a href="#">配送范围</a>
+									<a href="#">慢就返</a>
+								</p>
+							</li>
+							<li>
+								<h3>关于我们</h3>
+								<p>
+									<a href="#">关于也买酒</a>
+									<a href="#">联系我们</a>
+									<a href="#">诚招英才</a>
+									<a href="#">媒体聚焦</a>
+									<a href="#">隐私声明</a>
+									<a href="#">4008208060</a>
+								</p>
+							</li>
+							<li>
+								<h3>招商合作</h3>
+								<p>
+									<a href="#">经销商招募</a>
+									<a href="#">连锁店招募</a>
+									<a href="#">也买联盟</a>
+								</p>
+							</li>
+							<li>
+								<h3>也买酒APP下载</h3>
+								<p>
+									<span>下载也买酒APP 每月18手机购酒节<br  />精彩不错过</span><br  />
+									<span>也买酒官方微信</span><br  />
+									<h3>也买酒官方微信下载</h3>
+									<span>关注微信、劲爆优惠触手可得！</span><br  />
+									<img src="img/微信22.jpg"  />
+								</p>
+							</li>
+							<li class="li_end">
+								<img src="img/appstore.jpg" />
+								<img src="img/android.jpg" />
+								<p>
+									<img src="img/weixin333.jpg"  />
+									<img src="img/app99.jpg"  />
+								</p>
+								<div class="liend_div">
+									<a href="#"><img src="img/weibo1.jpg"  /></a>
+									<span>新浪微博</span>
+									<span>立即关注</span>
+									<span>也买酒官方微博</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--footer-->
+			<div id="footer">
+				<ul class="footer_ul">
+					<li><a href="#">关于也买酒</a></li>
+					<li><a href="#">联系我们</a></li>
+					<li><a href="#">媒体聚焦</a></li>
+					<li><a href="#">诚招英才</a></li>
+					<li><a href="#">隐私声明</a></li>
+				</ul>
+				<p>
+					<a hre="#">友情链接：</a>
+					<a hre="#">商酒咨询网</a>
+					<a hre="#">959品牌招商网</a>
+					<a hre="#">邛酒电子商务网</a>
+					<a hre="#">123美食网</a>
+					<a hre="#">重庆婚庆</a>
+					<a hre="#">酒招商</a>
+					<a hre="#">烧酒网</a>
+					<a hre="#">57团购网</a>
+					<a hre="#">中国糖酒网</a>
+					<a hre="#">中国品牌网</a>
+					<a hre="#">搜狐焦点烟台站</a>
+					<a hre="#">秒客网</a>
+					<a hre="#">中国糖酒门</a>
+				</p>
+				<div class="footer_span1">
+					<span>消费者最喜欢的网站top100</span>|
+					<span>仅限18周岁以上人士购买</span>|
+					<span>网络社会征信网</span>|
+					<span>上海工商</span>|
+					<span>京工网安备</span>|
+				</div>
+				<div class="footer_span2">
+					<span>Copyright 2006-2015 也买酒 yesmywine.com 版权所有 </span>|
+					<span> 沪ICP备15036938号</span>
+				</div>
+				<div class="footer_img">
+					<img src="img/chengxin.png"  />
+					<img src="img/hugong.jpg"  />
+				</div>
+			</div>
+	</body>
+</html>

@@ -1,0 +1,158 @@
+.com{
+	width:1200px;
+	margin:0 auto;
+}
+/*reg_log*/
+#reg_logo{
+	width:100%;
+	min-height:98px;
+	border-bottom:5px solid #bc0e31;
+}
+.reg_logo{
+	min-height:98px;
+	
+}
+.reg_logo h2{
+	float:left;
+	height:77px;
+	padding-top:21px;
+}
+.reg_logo .reg_right{
+	float:right;
+}
+.reg_right .reg_h3{
+	height:77px;
+	padding-top:21px;
+	float:left;
+	margin-right:80px;
+}
+/*reg_center*/
+#reg_center{
+	height:550px;
+	margin-bottom:20px;;
+	border-bottom:1px solid #ccc;	
+}
+.reg_center{
+	margin-top:30px;
+}
+.regc_left{
+	width:360px;
+	height:480px;
+	background:#f8f8f5;
+	float:left;
+	padding:20px;
+	border:1px solid #ccc;
+}
+.regc_left h3{
+	border-bottom:1px solid #ccc;
+	padding-bottom:10px;
+}
+/*#tip{
+	visibility:hidden;
+	width:300px;
+	height:30px;
+	line-height:30px;
+	margin:0 auto;
+	border:1px solid red;
+	border-radius:10px;
+	margin-top:10px;
+	color:red;
+	text-align:center;
+	font-size:12px;
+}*/
+.regc_left input{
+	margin:20px 10px;
+	width:200px;
+	height:38px;
+	outline:medium;
+	/*border:1px solid #f99;*/
+}
+#legal1{
+	width:300px;
+	text-align:center;
+	visibility: hidden;
+	color:red;
+}
+#legal2{
+	width:300px;
+	text-align:center;
+	visibility: hidden;
+	color:red;
+}
+#legal3{
+	width:300px;
+	text-align:center;
+	visibility: hidden;
+	color:red;	
+}
+.regc_left .identify{
+	display:inline-block;
+	width:45px;
+	height:30px;
+	line-height:30px;
+	color:#000;
+	font-size:12px;
+	background:#FFF;
+	text-align:center;
+	background:#0099CC;
+}
+.regc_left label{
+	display:inline-block;
+	margin-left:10px;
+	width:80px;
+	height:30px;
+	font-size:12px;
+}
+.regc_left .sub{
+	width:356px;
+	height:45px;
+	background:#bb0e30;
+	border:1px solid #bb0e30;
+	font-size:16px;
+	color:#fff;
+}
+.reg_left .code{
+	width:120px;
+	height:38px;
+}
+.regc_right{
+	width:773px;
+	height:540px;
+	float:left;
+}
+/*footer*/
+#footer p{
+	height:30px;
+	font:12px/30px "";
+	text-align:center;
+	}
+#footer p a{
+	color:#ccc;
+	}
+.footer_span1{
+	width:100%;
+	text-align:center;
+	}
+.footer_span1 span{
+	width:100%;
+	font-size:12px;
+	color:#999;
+	padding:0 5px;
+	}
+.footer_span2{
+	margin-top:5px;
+	text-align:center;
+}
+.footer_span2 span{
+	font-size:12px;
+	padding:0 5px;
+	color:#999;
+}
+.footer_img{
+	margin-top:10px;
+	text-align:center;
+}
+.footer_img img{
+	width:112px;
+	height:40px;
+}

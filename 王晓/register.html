@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<link href="img/yymm.ico" rel="shortcut icon" />
+		<link rel="stylesheet" type="text/css" href="css/com.css" />
+		<link rel="stylesheet" type="text/css" href="css/reg.css" />
+		<script src="js/cookie.js"></script>
+		<script>
+			window.onload = function(){
+				//注册页面
+				var input = document.getElementsByTagName("input");
+				var tip = document.getElementById("tip");
+				var identify = document.getElementById("identify");
+				var legal1 = document.getElementById("legal1");
+				var legal2 = document.getElementById("legal2");
+				var legal3 = document.getElementById("legal3");
+				//console.log(tip);
+				//获取Cookie中的帐号
+				/*var oldUserName = getCookie("username"); 
+				var oldPassWord = getCookie("password");
+				if(oldUserName){
+					input[0].value = oldUserName;
+				}
+				if(oldPassWord){
+					input[2].value = oldPassWord;
+				}
+				if(oldPassWord){
+					input[3].value = oldPassWord;
+				}*/
+				input[0].onblur = function(){
+					//1.手机号
+					//获取输入的内容
+					var str = this.value;
+					var isTrue = /^1\d{10}$/.test(str);
+					if(isTrue){
+						legal1.innerHTML = "您输入的手机号合法";
+					}else{
+						legal1.style.visibility = "visible";
+						legal1.innerHTML = "请输入手机号：";
+					}	
+				}
+				//2.验证码：
+				input[1].onblur = function(){
+					//2.手机号验证码
+					tip.style.visibility = "visible";
+					var str = this.value;
+					var isTrue = /^\d{4}$/.test(str);
+					if(isTrue){
+						tip.innerHTML = "您输入的验证码合法";
+					}else{
+						tip.innerHTML = "请输入验证码：";
+					}
+				}
+				//校验码
+				identify.onclick = function(){
+					//var sum = 0;
+					var sum = "";
+					for(var i=0;i<4;i++){
+						var cout = parseInt(Math.random()*10);
+						sum += cout;
+					}
+					console.log(sum);
+					identify.innerHTML = sum;
+				}
+				//3.密码
+				input[2].onblur = function(){
+					//3.密码
+					//w匹配任意多个字母 下划线
+					
+					var str = this.value;
+					var isTrue = /^\w{6,16}$/.test(str);
+					if(isTrue){
+						legal2.innerHTML = "您输入密码合法";
+					}else{
+						legal2.style.visibility = "visible";
+						legal2.innerHTML = "请输入合法的密码";
+					}
+					
+				}
+				//4.再次输入密码：
+				input[3].onblur = function(){
+					//4.再次输入密码：
+					
+					var str = this.value;
+					var isTrue = /^\w{6,16}$/.test(str);
+					if(isTrue){
+						legal3.innerHTML = "您输入正确的密码";
+						if(input[2].length==input[3].length && input[2].value == input[3].value){
+							legal3.innerHTML = "两次密码输入正确";
+						}else{
+							legal3.style.visibility = "visible";
+							legal3.innerHTML = "两次输入密码不一致";
+						}	
+					}else{
+						legal3.style.visibility = "visible";
+						legal3.innerHTML = "您输入的密码不合法";
+					}
+					
+				}
+				//5.点击注册
+				input[4].onclick = function(){
+					var name = input[0].value;
+					var pwd = input[2].value;
+					var pwd = input[3].value;
+					var d = new Date();
+					d.setDate(d.getDate()+7);
+					
+					//保存账号到cookie中
+					setCookie("username",name,d);
+					setCookie("password",pwd,d);
+					//console.log(setCookie)
+					alert("您已经注册成功");
+					window.location.href = "login.html";
+					
+				}	
+			}
+		</script>
+	</head>
+	<body>
+		<!--reg_logo-->
+		<div id="reg_logo">
+			<div class="reg_logo com">
+				<h2><img src="img/register_logo.jpg" /></h2>
+				<div class="reg_right">
+					<div class="reg_h3">
+						<h3><img src="img/reg_zheng.jpg"  /></h3>
+						<h3>正品保障</h3>
+					</div>
+					<div class="reg_h3">
+						<h3><img src="img/reg_30.jpg"  /></h3>
+						<h3>30天退换货</h3>
+					</div>
+					<div class="reg_h3">
+						<h3><img src="img/reg_temp.jpg"  /></h3>
+						<h3>恒温恒湿仓</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--reg_center-->	
+		<div id="reg_center">
+			<div class="reg_center com">
+				<div class="regc_left">
+					<!--<div left_con>-->
+						<h3>注册也买酒</h3>
+						<form>
+							<label for="">手机号码:</label><input type="text" placeholder="请输入手机号"  /><br>
+							<p id="legal1"></p>
+							<label for="">验证码:</label><input class="code" type="text" placeholder="请输入验证码"  /><span class="identify" id="identify">2316</span><br>
+							<label for="">密码:</label><input type="password" placeholder="密码请输入6-16位的字母或数字"  /><br>
+							<p id="legal2"></p>
+							<label for="">密码确认:</label><input type="password" placeholder="再次输入登录密码"  /><br>
+							<p id="legal3"></p>
+							<input class="sub" type="button" value="注册完成" />
+ 						</form>
+					<!--</div>-->
+				</div>
+				<div class="regc_right">
+					<img src="img/reg_pic.jpg"  />				
+				</div>
+			</div>
+		</div>
+		<!--reg_footer-->
+			<div id="footer com">
+				<div class="footer_span1">
+					<span>消费者最喜欢的网站top100</span>|
+					<span>仅限18周岁以上人士购买</span>|
+					<span>网络社会征信网</span>|
+					<span>上海工商</span>|
+					<span>京工网安备</span>|
+				</div>
+				<div class="footer_span2">
+					<span>Copyright 2006-2015 也买酒 yesmywine.com 版权所有 </span>|
+					<span> 沪ICP备15036938号</span>
+				</div>
+				<div class="footer_img">
+					<img src="img/chengxin.png"  />
+					<img src="img/hugong.jpg"  />
+				</div>
+			</div>
+	</body>
+</html>
